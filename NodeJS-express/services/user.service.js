@@ -4,4 +4,14 @@ const getUser = () => {
   return userSchema.find();
 };
 
-module.exports = { getUser };
+const addUser = (body) => {
+  const user = new userSchema({
+    firstname: body.firstname,
+    lastname: body.lastname,
+    age: body.age,
+  });
+
+  return user.save(body);
+};
+
+module.exports = { getUser, addUser };
