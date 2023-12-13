@@ -2,13 +2,13 @@ const { productSchema } = require("../models");
 
 const addProduct = (body) => {
   console.log(body);
-  const product = new productSchema({
-    productName: body.productName,
-    productDesc: body.productDesc,
-    productPrice: body.productPrice,
-  });
+  // const product = new productSchema({
+  //   productName: body.productName,
+  //   productDesc: body.productDesc,
+  //   productPrice: body.productPrice,
+  // });
 
-  return product.save(body);
+  return productSchema.create(body);
 };
 
 const getProduct = () => {

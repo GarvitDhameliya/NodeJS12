@@ -9,4 +9,14 @@ const getUserByFirstName = (firstName) => {
   return userSchema.findOne({ firstName });
 };
 
-module.exports = { addUser, getUserByFirstName };
+const deleteUser = (id) => {
+  // console.log(id, "id");
+
+  return userSchema.findByIdAndDelete(id);
+};
+
+const updateUser = (id, body) => {
+  return userSchema.findByIdAndUpdate(id, { $set: body });
+};
+
+module.exports = { addUser, getUserByFirstName, deleteUser, updateUser };
